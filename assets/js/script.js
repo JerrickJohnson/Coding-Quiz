@@ -186,7 +186,7 @@ function viewHighScores() {
     const buttonsContainer = document.createElement('div');
     buttonsContainer.innerHTML = 
     `<button id="go-back-btn" class="btn">Go Back</button>
-    <button id="clear-high-scores-btn" class=btn">Clear High Scores</button>`;
+    <button id="clear-high-scores-btn" class="btn">Clear High Scores</button>`;
     questionContainerEl.appendChild(buttonsContainer);
 
     const goBackButton = document.getElementById('go-back-btn');

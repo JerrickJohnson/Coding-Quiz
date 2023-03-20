@@ -106,6 +106,7 @@ main {
     cursor: pointer;
     width: auto;
     overflow-wrap: break-word;
+    padding: 5px;
 }
 
 .answer-btn {
@@ -190,6 +191,9 @@ main {
     padding: 5px;
 }
 
-#go-back-btn, #clear-scores-btn {
+#go-back-btn {
+    margin: 10px;
+}
+#clear-scores-btn {
     margin: 10px;
 }
