@@ -1,3 +1,8 @@
+:root{
+    --colorBlue: rgb(8, 8, 107);
+    --colorPurp: rgb(133, 16, 201);
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -18,6 +23,7 @@ main {
     align-items: center;
 }
 
+/* Classes */
 .container {
     display: flex;
     flex-direction: column;
@@ -55,24 +61,12 @@ main {
     text-decoration: none;
     background: none;
     border: none;
-    color: rgb(133, 16, 201);
+    color: var(--colorPurp);
     font-size: 1rem;
     padding: 0;
     margin: 0;
     outline: none;
     cursor: pointer;
-}
-
-#highScore-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-#time-remaining {
-    position: absolute;
-    top: 10px;
-    right: 10px;
 }
 
 .start {
@@ -104,8 +98,8 @@ main {
     font-size: 20px;
     text-align: center;
     white-space: nowrap;
-    background-color: rgb(8, 8, 107);
-    border: 1px solid rgb(8, 8, 107);
+    background-color: var(--colorBlue);
+    border: 1px solid var(--colorBlue);
     color:white;
     border-radius: 0.25rem;
     text-decoration: none;
@@ -122,17 +116,12 @@ main {
     padding: 10px;
 }
 
-
-#answer-buttons {
-    width: 100%;
-}
-
 .btn:hover {
     background-color: rgb(220, 104, 243);
 }
 
 .start-btn {
-    background-color: rgb(8, 8, 107);
+    background-color: var(--colorBlue);
     color: white;
     font-size: 20px;
     padding: 10px 20px;
@@ -154,6 +143,23 @@ main {
     font-size: 55px;
     font-weight: bold;
     margin-bottom: 2%;
+}
+
+/* IDs */
+#answer-buttons {
+    width: 100%;
+}
+
+#highScore-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#time-remaining {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 #correctWrong {

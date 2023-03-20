@@ -13,12 +13,14 @@ let timeRemaining = 60;
 let timerId;
 let score = 0;
 
+/*Hide the Questions*/
 questionEl.classList.add('hide');
 
 startButton.addEventListener('click', startQuiz);
 
 highScoreButton.addEventListener('click', viewHighScores);
 
+/*Start the Quiz*/
 function startQuiz() {
     console.log('Started!');
     hideStart();
@@ -38,11 +40,12 @@ function startQuiz() {
     startTimer ();
 }
 
+/*Timer*/
 function startTimer() {
     timerId = setInterval(() => {
         timeRemaining--;
         showTimeRemaining();
-
+        
         if(timeRemaining <= 0) {
             clearInterval(timerId);
             endGame();
@@ -50,10 +53,16 @@ function startTimer() {
     }, 1000);
 }
 
+function showTimeRemaining() {
+    timeRemainingEl.textContent = `Time: ${timeRemaining}`;
+}
+
+/*Hide the Start Button*/
 function hideStart() {
     startButton.classList.add('hide');
 }
 
+/*Bring in and Show the Question*/
 function showQuestion() {
     resetState();
     const question = shuffledQuestions[currentQuestionIndex];
@@ -73,6 +82,7 @@ function showQuestion() {
 
 }
 
+/*Reset State*/
 function resetState() {
     answerButtonsEl.classList.remove('answered');
     correctWrongEl.classList.remove('correct');
@@ -83,6 +93,7 @@ function resetState() {
         };
  }
 
+ /*Select Answer Function*/
 function selectAnswer(event) {
 
     answerButtonsEl.classList.add('answered');
@@ -93,7 +104,6 @@ function selectAnswer(event) {
     if (isCorrect) {
         correctWrongEl.innerText = 'Correct!';
         correctWrongEl.classList.add('correct');
-        selectedButton.classList.add('correct-answer');
         score++;
     } else {
         correctWrongEl.innerText = 'Wrong';
@@ -118,10 +128,7 @@ function selectAnswer(event) {
   }, 2000);
 }
 
-function showTimeRemaining() {
-    timeRemainingEl.textContent = `Time: ${timeRemaining}`;
-}
-
+/* Function EndGame or end of the Quiz*/
 function endGame() {
     clearInterval(timerId);
 
@@ -144,6 +151,7 @@ function endGame() {
     submitButton.addEventListener('click', saveHighScore);
 }
 
+/*Scoring and HighScores*/
 function saveHighScore() {
     const initialsInput = document.getElementById('initials');
     const initials = initialsInput.value.toUpperCase();
@@ -196,6 +204,7 @@ function viewHighScores() {
     questionContainerEl.classList.remove('hide');
 }
 
+/*Reset the Quiz or Restart from Beginning*/
 function resetQuiz() {
     shuffledQuestions = null;
     currentQuestionIndex = 0;
@@ -217,6 +226,7 @@ function resetQuiz() {
     initialsInput.value = '';
 }
 
+/*The Questions */
 const questions = [
     {
       question: 'Commonly used data types Do Not Include:', 
