@@ -4,6 +4,11 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+}
+
+main {
     padding: 0;
     margin: 0;
     display:flex;
@@ -14,39 +19,171 @@ body {
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 90%;
+    height: 80%;
+    margin: 0 auto;
     background-color: white;
     border-radius: 5px;
-    
+    padding: 0 calc(20% - 20px);
     box-shadow: 0 0 10px 2px;
+}
+
+.header {
+    width: 100%;
+}
+
+.topLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    font-size:large;
+    padding: 10px;
+    text-decoration: none;
+    background-color: white;
+}
+
+.high-btn {
+    text-decoration: none;
+    background: none;
+    border: none;
+    color: rgb(133, 16, 201);
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+#highScore-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#time-remaining {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.start h1 {
+    margin: 0;
+    padding-top: 10px;
+    margin-bottom: 20px;
 }
 
 .btn-grid {
     display: grid;
-    grid-template-columns: 20%;
-   
+    flex-wrap: wrap;
+    grid-template-columns: 100%;
     gap: 5%;
-    margin: 20px 0;
+    margin: 20px 5px;
 }
 
 .btn {
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
     background-color: rgb(8, 8, 107);
+    border: 1px solid rgb(8, 8, 107);
     color:white;
-    border-radius: 5px;
-    outline: none;
-    border-width: 0;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    cursor: pointer;
+    width: auto;
+    overflow-wrap: break-word;
+}
+
+.answer-btn {
+    display: block;
+    width: 35%;  
+    text-align: left;
+    margin-bottom: 2px;  
+    padding: 10px;
+}
+
+
+#answer-buttons {
+    width: 100%;
 }
 
 .btn:hover {
     background-color: rgb(220, 104, 243);
 }
 
-/* .hide {
+.start-btn {
+    background-color: rgb(8, 8, 107);
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hide {
+     display: none; 
+} 
+
+.hidden {
     display: none;
-} */
+}
 
 .quizQuestion {
-    font-size: 25px;
+    font-size: 55px;
     font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#correctWrong {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5px;
+    width: 60%;
+    font-size: 20px;
+    border-top: 1px solid gray;
+    font-style: italic;
+    color: gray;
+}
+
+#score-container {
+    text-align: center;
+}
+
+#high-scores-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#high-scores-list li {
+    font-size: 20px;
+    padding: 5px;
+}
+
+#go-back-btn, #clear-scores-btn {
+    margin: 10px;
 }

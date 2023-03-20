@@ -9,26 +9,46 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-    <div id="highScore-button">
-        <button class="high-btn">View High Scores</button>
-    </div>
-    <div id="time-remiaining"></div>
-    <div>Time:</div>
+  <main>
     <div class="container">
-        <div id=" question-container" class="hide">
-        <div id="question" class="quizQuestion">Question</div>  
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">1. Answer</button>
-                <button class="btn">2. Answer</button>
-                <button class="btn">3. Answer</button>
-                <button class="btn">4. Answer</button>
-            </div>
-        <div id="correctWrong">Correct</div>
-    </div>   
+    <div class="header">    
+    <div  class="topLine">
+        <div id="highScore-button">
+            <button class="high-btn">View High Scores</button>
+        </div>
+        <div id="time-remaining">Time: 60</div>
+    </div>
+    </div>
+    <div id="start" class="start">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit. Keep in mind the incorrect answers will penalize your score/time by ten seconds</p>
+    </div>
     <div class="controls">
         <button id="start-btn" class="start-btn btn">Start Quiz</button>
     </div>
+        <div id="question-container" class="hide">
+        <div id="question" class="quizQuestion">Question</div>  
+            <div id="answer-buttons" class="btn-grid hide">
+            </div>
+        <div id="correctWrong" class="rightWrong hide"></div>
+    </div>   
+    <div id="quiz-end" class="hide">
+        <h2>All Done!</h2>
+        <p>Your Final Score Is <span id="final-score"></span></p>
+        <form id="initials-form">
+            <label for = "initials">Enter Intitials:</label>
+            <input type="text" id="intials"/>
+            <button type="submit" class="submit-btn btn">Submit</button>
+        </form>
     </div>
+        <div id="score-container" class="hide">
+        <h2>High Scores</h2>
+        <ul id="high-scores-list"></ul>
+        <button id="go-back-btn" class="btn">Go Back</button>
+        <button id="clear-scores-btn" class="btn">Clear High Scores</button>
+    </div>    
+    </div>
+  </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
