@@ -125,6 +125,14 @@ function selectAnswer(event) {
     } else {
         endGame();
     }
+
+    if (timeRemaining === 0) {
+        // Clears interval
+        resetState();
+        endGame();
+      }
+
+
   }, 2000);
 }
 
